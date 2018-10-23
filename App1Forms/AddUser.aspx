@@ -7,19 +7,19 @@
 	<a href="Default.aspx">Home</a>
 	<br />
 
-	<label>name:</label>
+	<label>Name:</label>
 	<asp:TextBox ID="name" runat="server" />
 	<asp:RequiredFieldValidator runat="server" id="reqName" ControlToValidate="name" ErrorMessage="Name is required" />
 	<br />
-	<label>address:</label>
+	<label>Address:</label>
 	<asp:TextBox ID="address" runat="server" />
 	<br />
-	<label>company:</label>
+	<label>Company:</label>
 	<asp:TextBox ID="company" runat="server" />
 	<asp:RequiredFieldValidator runat="server" ID="redCompany" ControlToValidate="company" ErrorMessage="Company name is required" />
 	<br />
 	<br />
-	<asp:Button ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
+	<asp:Button CssClass="btn btn-primary" ID="Submit" runat="server" Text="Submit" OnClick="Submit_Click" />
 	<br />
 
 	<asp:PlaceHolder ID="my_data" runat="server"></asp:PlaceHolder>
