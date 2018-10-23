@@ -4,5 +4,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
 	<a href="AddUser.aspx">Add</a>
-<a href="NewList.aspx">List</a>
+	<br />
+	<a href="NewList.aspx">List by GridView</a>
+	<br />
+	<a href="DBTableUsingTable.aspx">List by Table</a>
+	<br />
 </asp:Content>
