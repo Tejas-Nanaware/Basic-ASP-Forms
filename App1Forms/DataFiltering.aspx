@@ -1,20 +1,39 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPage.master" AutoEventWireup="true" CodeFile="DataFiltering.aspx.cs" Inherits="DataFiltering" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 	<div class="container">
-		<asp:Label ID="test" runat="server">Query</asp:Label>
-		<br />
-		<label>Search Name:</label>
-		<asp:TextBox id="NameSearch" runat="server"></asp:TextBox>
-		<label>Search Company:</label>
-		<asp:TextBox id="CompanySearch" runat="server"></asp:TextBox>
-		<asp:Button ID="NameSearchButton" runat="server" OnClick="Search" Text="Submit" CssClass="btn btn-primary" />
-		<br />
-		<br />
-		<asp:Label ID="NoResults" runat="server"></asp:Label>
-		<asp:GridView id="Users" runat="server"></asp:GridView>
+		<div class="row">
+			<asp:label id="test" runat="server">Query</asp:label>
+			<br />
+		</div>
+		<div class="row">
+			<div class="col-4">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Search Name</span>
+					</div>
+					<asp:textbox id="NameSearch" runat="server" cssclass="form-control"></asp:textbox>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">Search Company</span>
+					</div>
+					<asp:textbox id="CompanySearch" runat="server" cssclass="form-control"></asp:textbox>
+				</div>
+			</div>
+			<div class="col">
+				<asp:button id="NameSearchButton" runat="server" onclick="Search" text="Submit" cssclass="btn btn-primary" />
+			</div>
+		</div>
+	</div>
+	<br />
+	<div class="container">
+		<asp:label id="NoResults" runat="server"></asp:label>
+		<asp:gridview id="Users" runat="server"></asp:gridview>
 	</div>
 </asp:Content>
 
