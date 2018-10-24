@@ -20,7 +20,7 @@ public partial class DBTableUsingTable : System.Web.UI.Page
 			con.ConnectionString = ConfigurationManager.ConnectionStrings["UserDetailsConnectionString"].ConnectionString;
 			con.Open();
 			SqlCommand cmd = new SqlCommand();
-			cmd.CommandText = "Select * from UserDetails";
+			cmd.CommandText = "Select ID,Name,Address,Company from UserDetails";
 			cmd.Connection = con;
 			SqlDataReader rd = cmd.ExecuteReader();
 			table.Append("<table class='table table-striped table-responsive table-sm'>");

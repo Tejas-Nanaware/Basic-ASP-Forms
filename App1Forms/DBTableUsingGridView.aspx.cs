@@ -14,7 +14,7 @@ public partial class NewList : System.Web.UI.Page
 		SqlConnection con = new SqlConnection();
 		con.ConnectionString = ConfigurationManager.ConnectionStrings["UserDetailsConnectionString"].ConnectionString;
 		con.Open();
-		SqlCommand cmd = new SqlCommand("Select * from UserDetails", con);
+		SqlCommand cmd = new SqlCommand("Select ID,Name,Address,Company from UserDetails", con);
 		SqlDataReader rd = cmd.ExecuteReader();
 		GridView1.DataSource = rd;
 		GridView1.DataBind();

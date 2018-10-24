@@ -23,7 +23,7 @@ public partial class DataFiltering : System.Web.UI.Page
 		con.ConnectionString = ConfigurationManager.ConnectionStrings["UserDetailsConnectionString"].ConnectionString;
 		con.Open();
 		SqlCommand cmd = new SqlCommand();
-		string query = "SELECT * FROM UserDetails";
+		string query = "SELECT ID,Name,Address,Company FROM UserDetails";
 		if(!string.IsNullOrEmpty(NameSearch.Text.Trim()) || !string.IsNullOrEmpty(CompanySearch.Text.Trim()))
 		{
 			//query += " Where Name Like '%' @Name + '%'";
