@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,6 +13,7 @@ public partial class UpdateWithForm : System.Web.UI.Page
 {
 	protected void Page_Load(object sender, EventArgs e)
 	{
+		//ScriptManager.GetCurrent(Page).RegisterPostBackControl(btnExportExcel);
 		if (!Page.IsPostBack)
 		{
 			this.GetData();
@@ -41,7 +43,7 @@ public partial class UpdateWithForm : System.Web.UI.Page
 
 	protected void UsersTable_RowDeleting(object sender, GridViewDeleteEventArgs e)
 	{
-		
+
 	}
 
 	protected void DeleteUser(object sender, GridViewCommandEventArgs e)
@@ -56,5 +58,50 @@ public partial class UpdateWithForm : System.Web.UI.Page
 		cmd.ExecuteNonQuery();
 		con.Close();
 		this.GetData();
+	}
+
+
+	protected void btnExportExcel_Click(object sender, EventArgs e)
+	{
+		this.ExportExcel();
+	}
+	private void ExportExcel()
+	{
+		Response.Clear();
+		Response.Buffer = true;
+		Response.AddHeader("content-disposition", "attachment;filename=UserDetails.xls");
+		Response.Charset = "";
+		Response.ContentType = "application/vnd.ms-excel";
+		StringWriter sw = new StringWriter();
+		HtmlTextWriter htw = new HtmlTextWriter(sw);
+		bool checkPaging = false;
+		if (UsersTable.AllowPaging)
+		{
+			checkPaging = true;
+			UsersTable.AllowPaging = false;
+			this.GetData();
+		}
+		//skip update and delete rows
+		UsersTable.Columns[UsersTable.Columns.Count - 1].Visible = false;
+		UsersTable.Columns[UsersTable.Columns.Count - 2].Visible = false;
+		
+		UsersTable.RenderControl(htw);
+		Response.Output.Write(sw.ToString());
+		Response.Flush();
+		Response.End();
+		//set back update and delete rows
+		UsersTable.Columns[UsersTable.Columns.Count - 1].Visible = true;
+		UsersTable.Columns[UsersTable.Columns.Count - 2].Visible = true;
+
+		if (checkPaging)
+		{
+			checkPaging = false;
+			UsersTable.AllowPaging = true;
+			this.GetData();
+		}
+	}
+	public override void VerifyRenderingInServerForm(Control control)
+	{
+		/* Verifies that the control is rendered */
 	}
 }
