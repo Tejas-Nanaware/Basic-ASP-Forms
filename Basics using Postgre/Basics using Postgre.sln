@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Basics using Postgre", "Basics using Postgre\", "{AEC7228C-3FD2-47FC-9480-F779DEB96BBD}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_63912"
+		Debug.AspNetCompiler.PhysicalPath = "Basics using Postgre\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63912\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_63912"
+		Release.AspNetCompiler.PhysicalPath = "Basics using Postgre\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_63912\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "63912"
+		SlnRelativePath = "Basics using Postgre\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEC7228C-3FD2-47FC-9480-F779DEB96BBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC7228C-3FD2-47FC-9480-F779DEB96BBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E33BD273-5A0A-41C1-B4EC-55ECE7503EA5}
+	EndGlobalSection
+EndGlobal
