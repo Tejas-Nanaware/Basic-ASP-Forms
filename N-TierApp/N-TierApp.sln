@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2046
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "N-TierApp", "N-TierApp\", "{A8BA4082-8AB7-4395-9944-54BE68D9B886}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.6.1"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_61242"
+		Debug.AspNetCompiler.PhysicalPath = "N-TierApp\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61242\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_61242"
+		Release.AspNetCompiler.PhysicalPath = "N-TierApp\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_61242\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "61242"
+		SlnRelativePath = "N-TierApp\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8BA4082-8AB7-4395-9944-54BE68D9B886}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8BA4082-8AB7-4395-9944-54BE68D9B886}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27910679-CA77-4B14-A532-43B55BAB9A5F}
+	EndGlobalSection
+EndGlobal
