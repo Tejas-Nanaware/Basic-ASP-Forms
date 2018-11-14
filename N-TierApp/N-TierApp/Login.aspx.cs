@@ -44,14 +44,16 @@ namespace N_TierApp
 					objSch_01_UserMaster.U_UserID = new Guid(ds.Tables[0].Rows[0]["U_UserID"].ToString());
 					objSch_01_UserMaster.U_UserName = Convert.ToString(ds.Tables[0].Rows[0]["U_UserName"]);
 					objSch_01_UserMaster.S_Password = Convert.ToString(ds.Tables[0].Rows[0]["S_Password"]);
+					objSch_01_UserMaster.S_EmailID = Convert.ToString(ds.Tables[0].Rows[0]["S_EmailID"]);
 					//objSch_UserMaster.Department = new Guid(ds.Tables[0].Rows[0]["Department"].ToString());
 					//objSch_UserMaster.UserLevel = Convert.ToInt32(ds.Tables[0].Rows[0]["UserLevel"].ToString());
 
 					Session["UserInfo"] = objSch_01_UserMaster;
-					Session["U_UserName"] = objSch_01_UserMaster;
+					Session["U_UserName"] = objSch_01_UserMaster.U_UserName;
+					Session["S_EmailID"] = objSch_01_UserMaster.S_EmailID;
 					Session["U_UserID"] = new Guid(ds.Tables[0].Rows[0]["U_UserID"].ToString());
-					Response.Redirect("Master/test.aspx", false);
-
+					Response.Redirect("Index.aspx", false);
+					string str = Session["U_UserName"].ToString();
 					ds.Clear();
 					ds.Dispose();
 				}
