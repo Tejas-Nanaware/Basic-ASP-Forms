@@ -35,6 +35,48 @@ namespace DALayer
 				throw ex;
 			}
 		}
+		public static DataSet sp_BindUser()
+		{
+			string SQL = "sp_BindUser";
+			return SqlHelper.ExecuteDataset(ConnectionInfo.ConnectionString.ToString(), CommandType.StoredProcedure, SQL);
+		}
+		public DataSet Check_UserName(Sch_01_UserMaster objSch_01_UserMaster)
+		{
+			//Creating parameters
+			SqlParameter[] l_object_sqlparameter = new SqlParameter[1];
+			l_object_sqlparameter[0] = new SqlParameter("@U_UserName", SqlDbType.VarChar);
+
+			//Setting Values for the parameters
+			l_object_sqlparameter[0].Value = objSch_01_UserMaster.U_UserName.Trim();
+
+			DataSet dsUser = SqlHelper.ExecuteDataset(ConnectionInfo.ConnectionString.ToString(),
+				CommandType.StoredProcedure, "USP_Check_Username", l_object_sqlparameter);
+
+			return dsUser;
+
+		}
+		public DataSet SP_AddUser(Sch_01_UserMaster ObjSch_01_UserMaster)
+		{
+			try
+			{
+				SqlParameter[] @params = new SqlParameter[9];
+				@params[0] = new SqlParameter("@S_FirstName", ObjSch_01_UserMaster.S_FirstName);
+				@params[1] = new SqlParameter("@S_LastName", ObjSch_01_UserMaster.S_LastName);
+				@params[2] = new SqlParameter("@U_UserName", ObjSch_01_UserMaster.U_UserName);
+				@params[3] = new SqlParameter("@S_EmailID", ObjSch_01_UserMaster.S_EmailID);
+				@params[4] = new SqlParameter("@S_MobileNumber", ObjSch_01_UserMaster.S_MobileNumber);
+				@params[5] = new SqlParameter("@S_Password", ObjSch_01_UserMaster.S_Password);
+				@params[6] = new SqlParameter("@S_ConfirmPassword", ObjSch_01_UserMaster.S_ConfirmPassword);
+				@params[7] = new SqlParameter("@I_Status", ObjSch_01_UserMaster.I_Status);
+				@params[8] = new SqlParameter("@U_CreatedBy", ObjSch_01_UserMaster.U_CreatedBy);
+				string my_sp = "USP_AddUser";
+				return SqlHelper.ExecuteDataset(ConnectionInfo.ConnectionString.ToString(), CommandType.StoredProcedure, my_sp, @params);
+			}
+			catch (Exception ex)
+			{
+				throw (ex);
+			}
+		}
 
 		public int SP_Password_Insert(Sch_01_UserMaster objSch_01_UserMaster)
 		{
@@ -78,11 +120,7 @@ namespace DALayer
 			return SqlHelper.ExecuteDataset(ConnectionInfo.ConnectionString.ToString(), CommandType.StoredProcedure, SQL, @paramas);
 
 		}
-		public static DataSet sp_BindUser()
-		{
-			string SQL = "sp_BindUser";
-			return SqlHelper.ExecuteDataset(ConnectionInfo.ConnectionString.ToString(), CommandType.StoredProcedure, SQL);
-		}
+		
 		public static bool DA_63_Usp_UserMaster_Insert(Sch_01_UserMaster objSch_01_UserMaster)
 		{
 			SqlParameter[] @params = new SqlParameter[12];

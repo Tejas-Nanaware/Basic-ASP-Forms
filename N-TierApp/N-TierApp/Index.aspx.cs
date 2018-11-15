@@ -18,5 +18,10 @@ namespace N_TierApp
 			viewIdeas.DataSource = ds;
 			viewIdeas.DataBind();
 		}
+
+		protected void addUser_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("AddUser.aspx");
+		}
 	}
 }

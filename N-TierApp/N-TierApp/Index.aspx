@@ -4,6 +4,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 	<div class="container">
 		<h1>Welcome</h1>
+		<asp:Button ID="addUser" runat="server" Text="Add" CssClass="btn btn-primary" OnClick="addUser_Click" />
 		<asp:GridView ID="viewIdeas" runat="server" AutoGenerateColumns="false">
 			<Columns>
 				<asp:BoundField DataField="S_FirstName" HeaderText="ID" />
